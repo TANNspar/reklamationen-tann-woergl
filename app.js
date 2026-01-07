@@ -1,5 +1,6 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbyuKLMUrYNtANBspKLQFskzaSn_TnuT1eDzJaGxZhQmW3s1MyUr_bnhGYswZ6hkeveP1w/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbukLwMYrNTANBSpKLQFsKzaSn_TnuT1eDZJaGZXQmW3SlMyUr_bnhGYSWZ6hkeveP1w/exec";
 const ADMIN_PW = "QM-rek";
+
 const filiale = document.getElementById("filiale");
 const submitBtn = document.getElementById("submitBtn");
 const mhd = document.getElementById("mhd");
@@ -11,6 +12,8 @@ document.getElementById("adminBtn").onclick = () => {
   if (pw === ADMIN_PW) {
     sessionStorage.setItem("admin_pw", pw);
     location.href = "admin.html";
+  } else if (pw !== null) {
+    alert("Falsches Passwort");
   }
 };
 
@@ -26,8 +29,9 @@ mhd.addEventListener("input", () => {
   mhd.value = v;
 });
 
-form.onsubmit = async e => {
+form.onsubmit = async (e) => {
   e.preventDefault();
+
   const data = Object.fromEntries(new FormData(form));
   data.rueckruf = !!data.rueckruf;
 
