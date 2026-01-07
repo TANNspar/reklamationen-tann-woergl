@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbukLwMYrNTANBSpKLQFsKzaSn_TnuT1eDZJaGZXQmW3SlMyUr_bnhGYSWZ6hkeveP1w/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbx9AyeXjLPbOQg0A1GzIehOr9jeBBInZWK3cYvB_m7bnLMZFIIs3F1zsodA2w9M0fAgsQ/exec";
 const ADMIN_PW = "QM-rek";
 
 const filiale = document.getElementById("filiale");
