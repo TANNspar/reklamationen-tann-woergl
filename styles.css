@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f6f7f9;
+  margin: 0;
+}
+
+header {
+  background: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+}
+
+.card {
+  background: white;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+label {
+  font-size: 14px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px;
+}
