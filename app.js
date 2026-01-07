@@ -32,9 +32,11 @@ mhd.addEventListener("input", () => {
 form.onsubmit = async (e) => {
   e.preventDefault();
 
+  // Daten einsammeln
   const data = Object.fromEntries(new FormData(form));
   data.rueckruf = !!data.rueckruf;
 
+  // Senden
   const r = await fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "text/plain;charset=utf-8" },
@@ -42,7 +44,20 @@ form.onsubmit = async (e) => {
   });
 
   const j = await r.json();
-  result.textContent = j.ok ? "Gespeichert" : "Fehler";
-  form.reset();
-  submitBtn.disabled = true;
+
+  if (j.ok) {
+    result.textContent = "Gespeichert";
+
+    // Formular wirklich vollständig leeren
+    form.reset();
+
+    // Manche Browser behalten Maskenwerte -> explizit leeren
+    mhd.value = "";
+    filiale.value = "";
+    // Button wieder sperren, bis neue Filiale eingegeben wird
+    submitbtn.disabled = true;
+
+  } else {
+    result.textContent = "Fehler: " + (j.error || "Unbekannt");
+  }
 };
