@@ -1,1 +1,74 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reklamationen TANN Wörgl</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Reklamationen TANN Wörgl</h1>
+    <button id="adminBtn" type="button">Pool</button>
+  </header>
 
+  <main class="card">
+    <form id="qmForm" autocomplete="off">
+      <div class="grid">
+        <div class="field">
+          <label for="filiale">Filiale (1–4 Ziffern) *</label>
+          <input id="filiale" name="filiale" inputmode="numeric" maxlength="4" required />
+        </div>
+
+        <div class="field">
+          <label>Artikel Nr.</label>
+          <input name="artikel_nr" />
+        </div>
+
+        <div class="field">
+          <label>Chargennummer</label>
+          <input name="chargennummer" />
+        </div>
+
+        <div class="field">
+          <label>Identnummer</label>
+          <input name="identnummer" />
+        </div>
+
+        <div class="field">
+          <label>MHD</label>
+          <input id="mhd" name="mhd" placeholder="TT.MM.JJJJ" />
+        </div>
+
+        <div class="field">
+          <label>Gewicht</label>
+          <input name="gewicht" placeholder="z. B. 1,25" />
+        </div>
+
+        <div class="field">
+          <label>Code</label>
+          <select name="code">
+            <option></option>
+            <option>01-Fehlware</option>
+            <option>04-Bruch/Luftzieher</option>
+            <option>05-Verderb</option>
+            <option>09-versteckter Mangel</option>
+            <option>10-Datum zu knapp</option>
+          </select>
+        </div>
+
+        <label class="row">
+          <input type="checkbox" name="rueckruf" />
+          Ich bitte um Rückruf
+        </label>
+      </div>
+
+      <button id="submitBtn" disabled>Senden</button>
+    </form>
+
+    <div id="result"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
