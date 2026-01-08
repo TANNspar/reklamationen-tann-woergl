@@ -8,60 +8,58 @@
 </head>
 <body>
   <header class="site-header">
-  <div class="header-inner">
-    <img src="logo-tann-tirol.png" alt="TANN Tirol" class="logo" />
+    <div class="header-inner">
+      <img src="logo-tann-tirol.png" alt="TANN Tirol" class="logo" />
 
-    <div class="header-text">
-      <h1>Reklamationen</h1>
-      <span>TANN Wörgl</span>
+      <div class="header-text">
+        <h1>Reklamationen</h1>
+        <span>TANN Wörgl</span>
+      </div>
+
+      <button id="adminBtn" type="button" class="admin-btn">Reklamationen</button>
     </div>
-
-    <button id="adminBtn" type="button" class="admin-btn">
-      Pool
-    </button>
-  </div>
-</header>
-
+  </header>
 
   <main class="card">
     <h2 class="form-title">Reklamationsmeldung</h2>
-    
+
     <form id="qmForm" autocomplete="off">
       <div class="grid">
         <div class="field">
-          <label for="filiale">Filiale (1–4 Ziffern) *</label>
+          <label for="filiale">Filialnummer *</label>
           <input id="filiale" name="filiale" inputmode="numeric" maxlength="4" required />
+          <div class="field-error" id="filialeError"></div>
         </div>
 
         <div class="field">
-          <label>Artikel Nr.</label>
-          <input name="artikel_nr" />
+          <label for="artikel_nr">Artikel Nr.</label>
+          <input id="artikel_nr" name="artikel_nr" />
         </div>
 
         <div class="field">
-          <label>Chargennummer</label>
-          <input name="chargennummer" />
+          <label for="chargennummer">Chargennummer</label>
+          <input id="chargennummer" name="chargennummer" />
         </div>
 
         <div class="field">
-          <label>Identnummer</label>
-          <input name="identnummer" />
+          <label for="identnummer">Identnummer</label>
+          <input id="identnummer" name="identnummer" />
         </div>
 
         <div class="field">
-          <label>MHD</label>
+          <label for="mhd">MHD</label>
           <input id="mhd" name="mhd" placeholder="TT.MM.JJJJ" />
         </div>
 
         <div class="field">
-          <label>Gewicht</label>
-          <input name="gewicht" placeholder="z. B. 1,25" />
+          <label for="gewicht">Gewicht</label>
+          <input id="gewicht" name="gewicht" placeholder="z. B. 1,25" />
         </div>
 
         <div class="field">
-          <label>Code</label>
-          <select name="code">
-            <option></option>
+          <label for="code">Code</label>
+          <select id="code" name="code">
+            <option value=""></option>
             <option>01-Fehlware</option>
             <option>04-Bruch/Luftzieher</option>
             <option>05-Verderb</option>
@@ -70,13 +68,22 @@
           </select>
         </div>
 
+        <!-- NEU: Anmerkung (rechts neben Code) -->
+        <div class="field">
+          <label for="anmerkung">Anmerkung</label>
+          <input id="anmerkung" name="anmerkung" placeholder="Optional" />
+        </div>
+
         <label class="row">
           <input type="checkbox" name="rueckruf" />
           Ich bitte um Rückruf
         </label>
       </div>
 
-      <button id="submitBtn" disabled>Senden</button>
+      <div class="actions">
+        <button id="submitBtn" type="submit" disabled>Senden</button>
+        <span class="hint">Dies kann einen kurzen Moment dauern</span>
+      </div>
     </form>
 
     <div id="result"></div>
