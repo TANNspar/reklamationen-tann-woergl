@@ -17,31 +17,31 @@ body {
   color: var(--dark);
 }
 
-/* ---------- HEADER ---------- */
-
+/* --- FIX: Header + Logo sauber skalieren --- */
 .site-header {
-  background: var(--white);
-  border-bottom: 4px solid var(--red);
+  background: #fff;
+  border-bottom: 4px solid #d9001b;
 }
 
 .header-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 16px 20px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  padding: 14px 20px;
+  display: flex;
   align-items: center;
   gap: 16px;
 }
 
 .logo {
-  height: 64px;
+  height: 56px;
+  width: auto;
+  display: block;
 }
 
 .header-text h1 {
   margin: 0;
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .header-text span {
@@ -50,17 +50,15 @@ body {
 }
 
 .admin-btn {
-  background: var(--dark);
-  color: white;
-  border: none;
+  margin-left: auto;
+  background: #4a4a4a;
+  color: #fff;
+  border: 0;
   padding: 10px 16px;
   border-radius: 8px;
   cursor: pointer;
 }
 
-.admin-btn:hover {
-  background: #000;
-}
 
 /* ---------- MAIN CARD ---------- */
 
