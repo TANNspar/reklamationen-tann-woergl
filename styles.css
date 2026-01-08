@@ -100,7 +100,7 @@ main.card{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:16px 18px;
-  align-items:end;
+  align-items:start;
 }
 
 .field label{
