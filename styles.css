@@ -20,7 +20,7 @@ html,body{
   background:var(--tann-bg);
 }
 
-/* ---------- HEADER (Index + Admin) ---------- */
+/* ---------- HEADER ---------- */
 
 .site-header{
   background:var(--tann-card);
@@ -37,14 +37,12 @@ html,body{
 }
 
 .logo{
-  height:52px;      /* verhindert riesiges Logo */
+  height:52px;
   width:auto;
   display:block;
 }
 
-.header-text{
-  line-height:1.1;
-}
+.header-text{ line-height:1.1; }
 
 .header-text h1{
   margin:0;
@@ -73,19 +71,8 @@ html,body{
   font-size:14px;
   transition:transform .03s ease, opacity .15s ease;
 }
-
 .admin-btn:hover{ opacity:.92; }
 .admin-btn:active{ transform:translateY(1px); }
-
-/* Fallback, falls irgendwo noch alter Header ohne Klassen existiert */
-header:not(.site-header){
-  background:var(--tann-card);
-  border-bottom:4px solid var(--tann-red);
-  padding:14px 20px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
 
 /* ---------- MAIN CARD ---------- */
 
@@ -107,7 +94,7 @@ main.card{
   border-left:6px solid var(--tann-red);
 }
 
-/* ---------- FORM LAYOUT ---------- */
+/* ---------- FORM ---------- */
 
 .grid{
   display:grid;
@@ -121,7 +108,6 @@ main.card{
   margin:0 0 6px 0;
   font-size:12.5px;
   font-weight:800;
-  color:var(--tann-text);
 }
 
 input,select{
@@ -134,12 +120,19 @@ input,select{
   outline:none;
   transition:border-color .15s ease, box-shadow .15s ease;
 }
-
 input::placeholder{ color:#9aa3ad; }
 
 input:focus,select:focus{
   border-color:var(--tann-red);
   box-shadow:0 0 0 4px var(--tann-focus);
+}
+
+.field-error{
+  min-height:16px;
+  margin-top:6px;
+  font-size:12px;
+  font-weight:700;
+  color:var(--tann-red);
 }
 
 /* Checkbox-Zeile */
@@ -153,7 +146,6 @@ input:focus,select:focus{
   border:1px dashed #d7dde6;
   background:#fafafa;
   font-weight:800;
-  color:var(--tann-text);
 }
 
 .row input[type="checkbox"]{
@@ -162,9 +154,15 @@ input:focus,select:focus{
   margin:0;
 }
 
-/* Submit Bereich */
-button#submitBtn{
+/* Actions */
+.actions{
   margin-top:18px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+button#submitBtn{
   background:var(--tann-red);
   color:#fff;
   border:none;
@@ -175,7 +173,6 @@ button#submitBtn{
   cursor:pointer;
   transition:opacity .15s ease, transform .03s ease;
 }
-
 button#submitBtn:hover{ opacity:.95; }
 button#submitBtn:active{ transform:translateY(1px); }
 
@@ -184,11 +181,31 @@ button#submitBtn:disabled{
   cursor:not-allowed;
 }
 
-/* Ergebnisbox */
+.hint{
+  font-size:12px;
+  color:var(--tann-muted);
+  font-weight:600;
+}
+
+/* Result */
 #result{
   margin-top:14px;
   font-weight:800;
-  color:var(--tann-text);
 }
 
-/* Optional: w*
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 900px){
+  .grid{ grid-template-columns:1fr; }
+  .header-inner{
+    flex-wrap:wrap;
+    justify-content:center;
+    text-align:center;
+  }
+  .admin-btn{
+    margin-left:0;
+    width:100%;
+  }
+  .logo{ height:44px; }
+  .actions{ flex-direction:column; align-items:flex-start; }
+}
