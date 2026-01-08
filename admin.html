@@ -1,38 +1,35 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reklamationen TANN Wörgl – Reklamationen</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reklamationen TANN Wörgl – Pool</title>
   <link rel="stylesheet" href="styles.css" />
-
 </head>
 <body>
-  
-<header class="site-header">
-  <div class="header-inner">
-    <img src="TANN-TIROL-LOGO-2025.png" alt="TANN Tirol" class="logo" />
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="logo-tann-tirol.png" alt="TANN Tirol" class="logo" />
 
-    <div class="header-text">
-      <h1>Reklamationen</h1>
-      <span>TANN Wörgl – Reklamationen</span>
+      <div class="header-text">
+        <h1>Reklamationen</h1>
+        <span>TANN Wörgl – Pool</span>
+      </div>
+
+      <a href="index.html" class="admin-btn" style="text-decoration:none; display:inline-block;">
+        Zurück
+      </a>
     </div>
+  </header>
 
-    <a href="index.html" class="admin-btn" style="text-decoration:none; display:inline-block;">
-      Zurück
-    </a>
-  </div>
-</header>
+  <main class="card">
+    <h2>Offen</h2>
+    <table class="table" id="openTable"></table>
 
+    <h2 style="margin-top:20px;">Erledigt</h2>
+    <table class="table" id="doneTable"></table>
+  </main>
 
-<main class="card">
-  <h2>Offen</h2>
-  <table class="table" id="openTable"></table>
-
-  <h2 style="margin-top:20px;">Erledigt</h2>
-  <table class="table" id="doneTable"></table>
-</main>
-
-<script src="admin.js"></script>
+  <script src="admin.js"></script>
 </body>
 </html>
