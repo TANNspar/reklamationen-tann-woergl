@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbx9AyeXjLPbOQg0A1GzIehOr9jeBBInZWK3cYvB_m7bnLMZFIIs3F1zsodA2w9M0fAgsQ/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycby6lT41Bqv218g80Oies8X2tCZHpG8VAQ9yf5mEl-gFfP8vkiXAiVW9x5p8HarvhTjc/exec";
 const pw = sessionStorage.getItem("admin_pw");
 
 if (!pw) {
